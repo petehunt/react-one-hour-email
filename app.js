@@ -46,7 +46,7 @@ var EmailItem = React.createClass({
     if (this.props.unread) {
       classes += ' email-item-unread';
     }
-    return (
+    return this.transferPropsTo(
       <div class={classes}>
         <div class="pure-u">
           <img class="email-avatar" alt={this.props.name + '\'s avatar'} src={this.props.avatar} height="65" width="65"/>
@@ -69,6 +69,7 @@ var List = React.createClass({
     var items = this.props.emails.map(function(email, i) {
       return (
         <EmailItem
+            onClick={this.props.onEmailSelected.bind(this.props, i)}
             avatar={email.avatar}
             selected={this.props.selected === i}
             name={email.name}
@@ -123,11 +124,14 @@ var App = React.createClass({
   getInitialState: function() {
     return {selected: 0};
   },
+  handleEmailSelected: React.autoBind(function(index) {
+    this.setState({selected: index});
+  }),
   render: function() {
     return (
       <div class="pure-g-r content id-layout">
         <Nav />
-        <List emails={this.props.emails} selected={this.state.selected} />
+        <List emails={this.props.emails} selected={this.state.selected} onEmailSelected={this.handleEmailSelected} />
         <Main email={this.props.emails[this.state.selected]} />
       </div>
     );
