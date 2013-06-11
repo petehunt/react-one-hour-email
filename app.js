@@ -28,25 +28,32 @@ var Nav = React.createClass({
   }
 });
 
+var EmailItem = React.createClass({
+  render: function() {
+    return (
+      <div class="email-item email-item-selected pure-g">
+        <div class="pure-u">
+          <img class="email-avatar" alt="Tilo Mitra's avatar" src="http://api.twitter.com/1/users/profile_image?screen_name=tilomitra&amp;size=bigger" height="65" width="65"/>
+        </div>
+
+        <div class="pure-u-3-4">
+          <h5 class="email-name">Tilo Mitra</h5>
+          <h4 class="email-subject">Hello from Toronto</h4>
+          <p class="email-desc">
+            Hey, I just wanted to check in with you from Toronto. I got here earlier today.
+          </p>
+        </div>
+      </div>
+    );
+  }
+});
+
 var List = React.createClass({
   render: function() {
     return (
       <div class="pure-u id-list">
           <div class="content">
-              <div class="email-item email-item-selected pure-g">
-                  <div class="pure-u">
-                      <img class="email-avatar" alt="Tilo Mitra's avatar" src="http://api.twitter.com/1/users/profile_image?screen_name=tilomitra&amp;size=bigger" height="65" width="65"/>
-                  </div>
-
-                  <div class="pure-u-3-4">
-                      <h5 class="email-name">Tilo Mitra</h5>
-                      <h4 class="email-subject">Hello from Toronto</h4>
-                      <p class="email-desc">
-                          Hey, I just wanted to check in with you from Toronto. I got here earlier today.
-                      </p>
-                  </div>
-              </div>
-
+              <EmailItem />
               <div class="email-item email-item-unread pure-g">
                   <div class="pure-u">
                       <img class="email-avatar" alt="Eric Ferraiuolo's avatar" src="http://api.twitter.com/1/users/profile_image?screen_name=ericf&amp;size=bigger" height="65" width="65"/>
