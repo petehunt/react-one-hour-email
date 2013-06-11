@@ -1,5 +1,14 @@
 /** @jsx React.DOM */
 
+var SAMPLE_DATA = [
+  {"unread": false, "selected": true, "desc": "Hey, I just wanted to check in with you from Toronto. I got here earlier today.", "name": "Tilo Mitra", "avatar": "http://api.twitter.com/1/users/profile_image?screen_name=tilomitra&amp;size=bigger", "subject": "Hello from Toronto"},
+  {"unread": true, "selected": false, "desc": "Hey, I had some feedback for pull request #51. We should center the menu so it looks better on mobile.", "name": "Eric Ferraiuolo", "avatar": "http://api.twitter.com/1/users/profile_image?screen_name=yuilibrary&amp;size=bigger", "subject": "Re: Pull Requests"},
+  {"unread": true, "selected": false, "desc": "Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla.", "name": "YUI Library", "avatar": "http://api.twitter.com/1/users/profile_image?screen_name=reid&amp;size=bigger", "subject": "You have 5 bugs assigned to you"},
+  {"unread": false, "selected": false, "desc": "Excepteur sint occaecat cupidatat non proident, sunt in culpa.", "name": "Reid Burke", "avatar": "http://api.twitter.com/1/users/profile_image?screen_name=triptych&amp;size=bigger", "subject": "Re: Design Language"},
+  {"unread": false, "selected": false, "desc": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.", "name": "Andrew Wooldridge", "avatar": "http://api.twitter.com/1/users/profile_image?screen_name=yahoofinance&amp;size=bigger", "subject": "YUI Blog Updates?"},
+  {"unread": false, "selected": false, "desc": "Mauris tempor mi vitae sem aliquet pharetra. Fusce in dui purus, nec malesuada mauris.", "name": "Yahoo! Finance", "avatar": "http://api.twitter.com/1/users/profile_image?screen_name=yahoonews&amp;size=bigger", "subject": "How to protect your finances from winter storms"}
+];
+
 var Nav = React.createClass({
   render: function() {
     return (
