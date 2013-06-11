@@ -185,13 +185,11 @@ var Main = React.createClass({
 var App = React.createClass({
   render: function() {
     return (
-
-<div class="pure-g-r content id-layout">
-    <Nav />
-    <List />
-    <Main />
-</div>
-
+      <div class="pure-g-r content id-layout">
+        <Nav />
+        <List />
+        <Main />
+      </div>
     );
   }
 });
