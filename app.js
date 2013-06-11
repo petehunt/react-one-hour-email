@@ -4,8 +4,8 @@ var App = React.createClass({
   render: function() {
     return (
 
-<div class="pure-g-r content" id="layout">
-    <div class="pure-u" id="nav">
+<div class="pure-g-r content id-layout">
+    <div class="pure-u id-nav">
         <a href="#nav" class="nav-menu-button">Menu</a>
 
         <div class="nav-inner">
@@ -27,7 +27,7 @@ var App = React.createClass({
         </div>
     </div>
 
-    <div class="pure-u" id="list">
+    <div class="pure-u id-list">
         <div class="content">
             <div class="email-item email-item-selected pure-g">
                 <div class="pure-u">
@@ -129,7 +129,7 @@ var App = React.createClass({
         </div>
     </div>
 
-    <div class="pure-u" id="main">
+    <div class="pure-u id-main">
         <div class="content">
             <div class="email-content pure-g">
                 <div class="email-content-header pure-g">

@@ -7,18 +7,18 @@ a {
 }
 
 /* LAYOUT CSS */
-#layout {
+.id-layout {
     padding-left:500px; /* "left col (nav + list)" width */
     position: relative;
 }
 
-#nav, #list {
+.id-nav, .id-list {
     position: fixed;
     top: 0;
     bottom: 0;
     overflow: auto;
 }
-#nav {
+.id-nav {
     margin-left:-500px; /* "left col (nav + list)" width */
     width:150px;
     background: rgb(37, 42, 58);
@@ -26,13 +26,13 @@ a {
     padding: 2em 0;
 }
 
-#list {
+.id-list {
     margin-left: -350px;
     width:350px;
     border-right: 1px solid #ddd;
 }
 
-#main {
+.id-main {
     width: 100%;
 }
 
@@ -58,25 +58,25 @@ a.secondary-button {
 
 
 /* Vertical Navigation Styles */
-#nav .pure-menu {
+.id-nav .pure-menu {
     background: transparent;
     border: none;
     text-align: left;
 }
-    #nav .pure-menu a:hover {
+    .id-nav .pure-menu a:hover {
         background: rgb(55, 60, 90);
     }
-    #nav .pure-menu a {
+    .id-nav .pure-menu a {
         color: #fff;
         margin-left: 0.5em;
     }
-    #nav .pure-menu-heading {
+    .id-nav .pure-menu-heading {
         border-bottom: none;
         font-size:110%;
         color: rgb(75, 113, 151);
     }
 
-    #nav .nav-menu-button {
+    .id-nav .nav-menu-button {
         display: none;
     }
 
@@ -167,18 +167,18 @@ a.secondary-button {
 
 @media (max-width: 867px) {
 
-    #list, #main {
+    .id-list, .id-main {
         width: auto;
     }
-    #layout {
+    .id-layout {
         padding-left: -150px;
     }
-    #list {
+    .id-list {
         width: auto;
         height: 33%;
         border-bottom: 1px solid #ddd;
     }
-    #main {
+    .id-main {
         position: fixed;
         top: 33%;
         right: 0;
@@ -190,29 +190,29 @@ a.secondary-button {
 }
 
 @media (max-width: 480px) {
-    #layout, #nav, #list, #main {
+    .id-layout, .id-nav, .id-list, .id-main {
         position: static;
         margin: 0;
         padding: 0;
     }
-    #nav {
+    .id-nav {
         width: 100%;
         height: 40px;
         position: relative;
     }
-    #nav .nav-menu-button {
+    .id-nav .nav-menu-button {
         display: block;
         top: 0.5em;
         right: 0.5em;
         position: absolute;
     }
-    #nav.active {
+    .id-nav.active {
         height: 80%;
     }
     .nav-inner {
         display: none;
     }
-    #nav.active .nav-inner {
+    .id-nav.active .nav-inner {
         display: block;
     }
     .email-avatar {
