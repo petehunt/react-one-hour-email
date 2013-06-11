@@ -120,12 +120,15 @@ var Main = React.createClass({
 });
 
 var App = React.createClass({
+  getInitialState: function() {
+    return {selected: 0};
+  },
   render: function() {
     return (
       <div class="pure-g-r content id-layout">
         <Nav />
-        <List emails={this.props.emails} selected={0} />
-        <Main email={this.props.emails[0]} />
+        <List emails={this.props.emails} selected={this.state.selected} />
+        <Main email={this.props.emails[this.state.selected]} />
       </div>
     );
   }
