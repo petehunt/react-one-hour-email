@@ -73,7 +73,7 @@ var List = React.createClass({
             avatar={email.avatar}
             selected={this.props.selected === i}
             name={email.name}
-            unread={email.unread}
+            unread={email.unread && !this.props.read[i]}
             subject={email.subject}>
           {email.desc}
         </EmailItem>
@@ -123,16 +123,18 @@ var Main = React.createClass({
 
 var App = React.createClass({
   getInitialState: function() {
-    return {selected: 0};
+    return {selected: 0, read: {}};
   },
   handleEmailSelected: React.autoBind(function(index) {
-    this.setState({selected: index});
+    var read = this.state.read;
+    read[this.state.selected] = true;
+    this.setState({selected: index, read: read});
   }),
   render: function() {
     return (
       <div class="pure-g-r content id-layout">
         <Nav />
-        <List emails={this.props.emails} selected={this.state.selected} onEmailSelected={this.handleEmailSelected} />
+        <List emails={this.props.emails} selected={this.state.selected} onEmailSelected={this.handleEmailSelected} read={this.state.read} />
         <Main email={this.props.emails[this.state.selected]} />
       </div>
     );
