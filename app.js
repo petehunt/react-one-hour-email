@@ -136,6 +136,52 @@ var List = React.createClass({
   }
 });
 
+var Main = React.createClass({
+  render: function() {
+    return (
+      <div class="pure-u id-main">
+          <div class="content">
+              <div class="email-content pure-g">
+                  <div class="email-content-header pure-g">
+                      <div class="pure-u-1-2">
+                          <h1 class="email-content-title">Hello from Toronto</h1>
+                          <p class="email-content-subtitle">
+                              From <a>Tilo Mitra</a> at <span>3:56pm, April 3, 2012</span>
+                          </p>
+                      </div>
+
+                      <div class="pure-u-1-2 email-content-controls">
+                          <a class="pure-button secondary-button">Reply</a>
+                          <a class="pure-button secondary-button">Forward</a>
+                          <a class="pure-button secondary-button">Move to</a>
+                      </div>
+                  </div>
+
+                  <div class="email-content-body pure-u-1">
+                      <p>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p>
+                          Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </p>
+                      <p>
+                          Aliquam ac feugiat dolor. Proin mattis massa sit amet enim iaculis tincidunt. Mauris tempor mi vitae sem aliquet pharetra. Fusce in dui purus, nec malesuada mauris. Curabitur ornare arcu quis mi blandit laoreet. Vivamus imperdiet fermentum mauris, ac posuere urna tempor at. Duis pellentesque justo ac sapien aliquet egestas. Morbi enim mi, porta eget ullamcorper at, pharetra id lorem.
+                      </p>
+                      <p>
+                          Donec sagittis dolor ut quam pharetra pretium varius in nibh. Suspendisse potenti. Donec imperdiet, velit vel adipiscing bibendum, leo eros tristique augue, eu rutrum lacus sapien vel quam. Nam orci arcu, luctus quis vestibulum ut, ullamcorper ut enim. Morbi semper erat quis orci aliquet condimentum. Nam interdum mauris sed massa dignissim rhoncus.
+                      </p>
+                      <p>
+                          Regards,<br/>
+                          Tilo
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+    );
+  }
+});
+
 var App = React.createClass({
   render: function() {
     return (
@@ -143,45 +189,7 @@ var App = React.createClass({
 <div class="pure-g-r content id-layout">
     <Nav />
     <List />
-    <div class="pure-u id-main">
-        <div class="content">
-            <div class="email-content pure-g">
-                <div class="email-content-header pure-g">
-                    <div class="pure-u-1-2">
-                        <h1 class="email-content-title">Hello from Toronto</h1>
-                        <p class="email-content-subtitle">
-                            From <a>Tilo Mitra</a> at <span>3:56pm, April 3, 2012</span>
-                        </p>
-                    </div>
-
-                    <div class="pure-u-1-2 email-content-controls">
-                        <a class="pure-button secondary-button">Reply</a>
-                        <a class="pure-button secondary-button">Forward</a>
-                        <a class="pure-button secondary-button">Move to</a>
-                    </div>
-                </div>
-
-                <div class="email-content-body pure-u-1">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    <p>
-                        Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                    <p>
-                        Aliquam ac feugiat dolor. Proin mattis massa sit amet enim iaculis tincidunt. Mauris tempor mi vitae sem aliquet pharetra. Fusce in dui purus, nec malesuada mauris. Curabitur ornare arcu quis mi blandit laoreet. Vivamus imperdiet fermentum mauris, ac posuere urna tempor at. Duis pellentesque justo ac sapien aliquet egestas. Morbi enim mi, porta eget ullamcorper at, pharetra id lorem.
-                    </p>
-                    <p>
-                        Donec sagittis dolor ut quam pharetra pretium varius in nibh. Suspendisse potenti. Donec imperdiet, velit vel adipiscing bibendum, leo eros tristique augue, eu rutrum lacus sapien vel quam. Nam orci arcu, luctus quis vestibulum ut, ullamcorper ut enim. Morbi semper erat quis orci aliquet condimentum. Nam interdum mauris sed massa dignissim rhoncus.
-                    </p>
-                    <p>
-                        Regards,<br/>
-                        Tilo
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <Main />
 </div>
 
     );
