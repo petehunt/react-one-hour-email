@@ -31,7 +31,7 @@ var App = React.createClass({
         <div class="content">
             <div class="email-item email-item-selected pure-g">
                 <div class="pure-u">
-                    <img class="email-avatar" alt="Tilo Mitra's avatar" src="http://api.twitter.com/1/users/profile_image?screen_name=tilomitra&amp;size=bigger" height="65" width="65">
+                    <img class="email-avatar" alt="Tilo Mitra's avatar" src="http://api.twitter.com/1/users/profile_image?screen_name=tilomitra&amp;size=bigger" height="65" width="65"/>
                 </div>
 
                 <div class="pure-u-3-4">
@@ -45,7 +45,7 @@ var App = React.createClass({
 
             <div class="email-item email-item-unread pure-g">
                 <div class="pure-u">
-                    <img class="email-avatar" alt="Eric Ferraiuolo's avatar" src="http://api.twitter.com/1/users/profile_image?screen_name=ericf&amp;size=bigger" height="65" width="65">
+                    <img class="email-avatar" alt="Eric Ferraiuolo's avatar" src="http://api.twitter.com/1/users/profile_image?screen_name=ericf&amp;size=bigger" height="65" width="65"/>
                 </div>
 
                 <div class="pure-u-3-4">
@@ -161,7 +161,7 @@ var App = React.createClass({
                         Donec sagittis dolor ut quam pharetra pretium varius in nibh. Suspendisse potenti. Donec imperdiet, velit vel adipiscing bibendum, leo eros tristique augue, eu rutrum lacus sapien vel quam. Nam orci arcu, luctus quis vestibulum ut, ullamcorper ut enim. Morbi semper erat quis orci aliquet condimentum. Nam interdum mauris sed massa dignissim rhoncus.
                     </p>
                     <p>
-                        Regards,<br>
+                        Regards,<br/>
                         Tilo
                     </p>
                 </div>
