@@ -124,11 +124,11 @@ var App = React.createClass({
     return (
       <div class="pure-g-r content id-layout">
         <Nav />
-        <List emails={SAMPLE_DATA} />
-        <Main email={SAMPLE_DATA[0]} />
+        <List emails={this.props.emails} />
+        <Main email={this.props.emails[0]} />
       </div>
     );
   }
 });
 
-React.renderComponent(<App />, document.body);
+React.renderComponent(<App emails={SAMPLE_DATA} />, document.body);
