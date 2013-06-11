@@ -73,6 +73,7 @@ var List = React.createClass({
             avatar={email.avatar}
             selected={this.props.selected === i}
             name={email.name}
+            unread={email.unread}
             subject={email.subject}>
           {email.desc}
         </EmailItem>
