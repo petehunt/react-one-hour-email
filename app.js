@@ -1,32 +1,39 @@
 /** @jsx React.DOM */
 
+var Nav = React.createClass({
+  render: function() {
+    return (
+      <div class="pure-u id-nav">
+          <a href="#nav" class="nav-menu-button">Menu</a>
+
+          <div class="nav-inner">
+              <a class="pure-button primary-button" href="#">Compose</a>
+
+              <div class="pure-menu pure-menu-open">
+                  <ul>
+                      <li><a href="#">Inbox <span class="email-count">(2)</span></a></li>
+                      <li><a href="#">Important</a></li>
+                      <li><a href="#">Sent</a></li>
+                      <li><a href="#">Drafts</a></li>
+                      <li><a href="#">Trash</a></li>
+                      <li class="pure-menu-heading">Labels</li>
+                      <li><a href="#"><span class="email-label-personal"></span>Personal</a></li>
+                      <li><a href="#"><span class="email-label-work"></span>Work</a></li>
+                      <li><a href="#"><span class="email-label-travel"></span>Travel</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+    );
+  }
+});
+
 var App = React.createClass({
   render: function() {
     return (
 
 <div class="pure-g-r content id-layout">
-    <div class="pure-u id-nav">
-        <a href="#nav" class="nav-menu-button">Menu</a>
-
-        <div class="nav-inner">
-            <a class="pure-button primary-button" href="#">Compose</a>
-
-            <div class="pure-menu pure-menu-open">
-                <ul>
-                    <li><a href="#">Inbox <span class="email-count">(2)</span></a></li>
-                    <li><a href="#">Important</a></li>
-                    <li><a href="#">Sent</a></li>
-                    <li><a href="#">Drafts</a></li>
-                    <li><a href="#">Trash</a></li>
-                    <li class="pure-menu-heading">Labels</li>
-                    <li><a href="#"><span class="email-label-personal"></span>Personal</a></li>
-                    <li><a href="#"><span class="email-label-work"></span>Work</a></li>
-                    <li><a href="#"><span class="email-label-travel"></span>Travel</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
+    <Nav />
     <div class="pure-u id-list">
         <div class="content">
             <div class="email-item email-item-selected pure-g">
