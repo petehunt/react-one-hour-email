@@ -66,99 +66,22 @@ var EmailItem = React.createClass({
 
 var List = React.createClass({
   render: function() {
+    var items = SAMPLE_DATA.map(function(email) {
+      return (
+        <EmailItem
+            avatar={email.avatar}
+            selected={email.selected}
+            name={email.name}
+            subject={email.subject}>
+          {email.desc}
+        </EmailItem>
+      );
+    });
+
     return (
       <div class="pure-u id-list">
           <div class="content">
-              <EmailItem
-                  avatar="http://api.twitter.com/1/users/profile_image?screen_name=tilomitra&amp;size=bigger"
-                  selected={true}
-                  name="Tilo Mitra"
-                  subject="Hello from Toronto">
-                Hey, I just wanted to check in with you from Toronto. I got here earlier today.
-              </EmailItem>
-              <div class="email-item email-item-unread pure-g">
-                  <div class="pure-u">
-                      <img class="email-avatar" alt="Eric Ferraiuolo's avatar" src="http://api.twitter.com/1/users/profile_image?screen_name=ericf&amp;size=bigger" height="65" width="65"/>
-                  </div>
-
-                  <div class="pure-u-3-4">
-                      <h5 class="email-name">Eric Ferraiuolo</h5>
-                      <h4 class="email-subject">Re: Pull Requests</h4>
-                      <p class="email-desc">
-                          Hey, I had some feedback for pull request #51. We should center the menu so it looks better on mobile.
-                      </p>
-                  </div>
-              </div>
-
-              <div class="email-item email-item-unread pure-g">
-                  <div class="pure-u">
-                      <img class="email-avatar" alt="YUI's avatar" src="http://api.twitter.com/1/users/profile_image?screen_name=yuilibrary&amp;size=bigger" height="65" width="65"/>
-                  </div>
-
-                  <div class="pure-u-3-4">
-                      <h5 class="email-name">YUI Library</h5>
-                      <h4 class="email-subject">You have 5 bugs assigned to you</h4>
-                      <p class="email-desc">
-                          Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla.
-                      </p>
-                  </div>
-              </div>
-
-              <div class="email-item pure-g">
-                  <div class="pure-u">
-                      <img class="email-avatar" alt="Reid Burke's avatar" src="http://api.twitter.com/1/users/profile_image?screen_name=reid&amp;size=bigger" height="65" width="65"/>
-                  </div>
-
-                  <div class="pure-u-3-4">
-                      <h5 class="email-name">Reid Burke</h5>
-                      <h4 class="email-subject">Re: Design Language</h4>
-                      <p class="email-desc">
-                          Excepteur sint occaecat cupidatat non proident, sunt in culpa.
-                      </p>
-                  </div>
-              </div>
-
-              <div class="email-item pure-g">
-                  <div class="pure-u">
-                      <img class="email-avatar" alt="Andrew Wooldridge's avatar" src="http://api.twitter.com/1/users/profile_image?screen_name=triptych&amp;size=bigger" height="65" width="65"/>
-                  </div>
-
-                  <div class="pure-u-3-4">
-                      <h5 class="email-name">Andrew Wooldridge</h5>
-                      <h4 class="email-subject">YUI Blog Updates?</h4>
-                      <p class="email-desc">
-                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                      </p>
-                  </div>
-              </div>
-
-              <div class="email-item pure-g">
-                  <div class="pure-u">
-                      <img class="email-avatar" alt="Yahoo! Finance's Avatar" src="http://api.twitter.com/1/users/profile_image?screen_name=yahoofinance&amp;size=bigger" height="65" width="65"/>
-                  </div>
-
-                  <div class="pure-u-3-4">
-                      <h5 class="email-name">Yahoo! Finance</h5>
-                      <h4 class="email-subject">How to protect your finances from winter storms</h4>
-                      <p class="email-desc">
-                          Mauris tempor mi vitae sem aliquet pharetra. Fusce in dui purus, nec malesuada mauris.
-                      </p>
-                  </div>
-              </div>
-
-              <div class="email-item pure-g">
-                  <div class="pure-u">
-                      <img class="email-avatar" alt="Yahoo! News' avatar" src="http://api.twitter.com/1/users/profile_image?screen_name=yahoonews&amp;size=bigger" height="65" width="65"/>
-                  </div>
-
-                  <div class="pure-u-3-4">
-                      <h5 class="email-name">Yahoo! News</h5>
-                      <h4 class="email-subject">Summary for April 3rd, 2012</h4>
-                      <p class="email-desc">
-                          We found 10 news articles that you may like.
-                      </p>
-                  </div>
-              </div>
+             {items}
           </div>
       </div>
     );
