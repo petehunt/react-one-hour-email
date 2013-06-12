@@ -111,9 +111,7 @@ var Main = React.createClass({
                       </div>
                   </div>
 
-                  <div class="email-content-body pure-u-1">
-                      {this.props.email.content}
-                  </div>
+                  <div class="email-content-body pure-u-1" dangerouslySetInnerHTML={{__html: this.props.email.content}} />
               </div>
           </div>
       </div>
@@ -141,4 +139,6 @@ var App = React.createClass({
   }
 });
 
-React.renderComponent(<App emails={SAMPLE_DATA} />, document.body);
+$.getJSON('inbox.json', function(emails) {
+  React.renderComponent(<App emails={emails} />, document.body);
+});
