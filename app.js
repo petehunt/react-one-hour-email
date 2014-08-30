@@ -123,11 +123,11 @@ var App = React.createClass({
   getInitialState: function() {
     return {selected: 0, read: {}};
   },
-  handleEmailSelected: React.autoBind(function(index) {
+  handleEmailSelected: function(index) {
     var read = this.state.read;
     read[this.state.selected] = true;
     this.setState({selected: index, read: read});
-  }),
+  },
   render: function() {
     return (
       <div class="pure-g-r content id-layout">
