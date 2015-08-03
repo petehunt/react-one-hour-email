@@ -1,1 +1,4 @@
-
+[
+  {"name": "Test", "subject": "Test", "content": "Test", "desc": "Test", "avatar": "https://profile-a.xx.fbcdn.net/hprofile-ash3/c178.0.604.604/s320x320/600249_1002029915098_1903163647_n.jpg", "timestamp": "2015-07-20", "unread": "True" },
+  {"name": "Test2", "subject": "Test2", "content": "Test2", "desc": "Test2", "avatar": "https://profile-a.xx.fbcdn.net/hprofile-ash3/c178.0.604.604/s320x320/600249_1002029915098_1903163647_n.jpg", "timestamp": "2015-07-20", "unread": "True" }
+]
