@@ -29,9 +29,9 @@
     try { Typekit.load(); } catch (e) {}
 </script>
 
-<script src="components/zepto/zepto.min.js"></script>
-<script src="components/react/react.js"></script>
-<script src="components/react/JSXTransformer.js"></script>
+<script src="bower_components/zepto/zepto.min.js"></script>
+<script src="bower_components/react/react.js"></script>
+<script src="bower_components/react/JSXTransformer.js"></script>
 <script src="app.js" type="text/jsx"></script>
 
 
@@ -48,9 +48,9 @@
             nav        = Y.one('.id-nav');
 
         // Setting the active class name expands the menu vertically on small screens.
-        menuButton.on('click', function (e) {
-            nav.toggleClass('active');
-        });
+        //menuButton.on('click', function (e) {
+        //    nav.toggleClass('active');
+        //});
 
         // Your application code goes here...
 
@@ -62,9 +62,10 @@ YUI().use('node-base', 'node-event-delegate', function (Y) {
 
     // This just makes sure that the href="#" attached to the <a> elements
     // don't scroll you back up the page.
-    Y.one('.content').delegate('click', function (e) {
+    /*Y.one('.content').delegate('click', function (e) {
         e.preventDefault();
     }, 'a[href="#"]');
+    */
 });
 </script>
 

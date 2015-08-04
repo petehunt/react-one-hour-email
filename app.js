@@ -10,23 +10,23 @@ var Nav = React.createClass({
       }
     }
     return (
-      <div class="pure-u id-nav">
-          <a href="#nav" class="nav-menu-button">Menu</a>
+      <div className="pure-u id-nav">
+          <a href="#nav" className="nav-menu-button">Menu</a>
 
-          <div class="nav-inner">
-              <a class="pure-button primary-button" href="#">Compose</a>
+          <div className="nav-inner">
+              <a className="pure-button primary-button" href="#">Compose</a>
 
-              <div class="pure-menu pure-menu-open">
+              <div className="pure-menu pure-menu-open">
                   <ul>
-                      <li><a href="#" onClick={this.props.onFolderSelected.bind(this.props, 'inbox')}>Inbox <span class="email-count">({count})</span></a></li>
-                      <li><a href="#" onClick={this.props.onFolderSelected.bind(this.props, 'important')}>Important</a></li>
+                      <li><a href="#" onClick={this.props.onFolderSelected.bind(null, 'inbox')}>Inbox <span className="email-count">({count})</span></a></li>
+                      <li><a href="#" onClick={this.props.onFolderSelected.bind(null, 'important')}>Important</a></li>
                       <li><a href="#">Sent</a></li>
                       <li><a href="#">Drafts</a></li>
                       <li><a href="#">Trash</a></li>
-                      <li class="pure-menu-heading">Labels</li>
-                      <li><a href="#"><span class="email-label-personal"></span>Personal</a></li>
-                      <li><a href="#"><span class="email-label-work"></span>Work</a></li>
-                      <li><a href="#"><span class="email-label-travel"></span>Travel</a></li>
+                      <li className="pure-menu-heading">Labels</li>
+                      <li><a href="#"><span className="email-label-personal"></span>Personal</a></li>
+                      <li><a href="#"><span className="email-label-work"></span>Work</a></li>
+                      <li><a href="#"><span className="email-label-travel"></span>Travel</a></li>
                   </ul>
               </div>
           </div>
@@ -44,16 +44,16 @@ var EmailItem = React.createClass({
     if (this.props.unread) {
       classes += ' email-item-unread';
     }
-    return this.transferPropsTo(
-      <div class={classes}>
-        <div class="pure-u">
-          <img class="email-avatar" alt={this.props.name + '\'s avatar'} src={this.props.avatar} height="65" width="65"/>
+    return (
+      <div className={classes}>
+        <div className="pure-u">
+          <img className="email-avatar" alt={this.props.name + '\'s avatar'} src={this.props.avatar} height="65" width="65"/>
         </div>
 
-        <div class="pure-u-3-4">
-          <h5 class="email-name">{this.props.name}</h5>
-          <h4 class="email-subject">{this.props.subject}</h4>
-          <p class="email-desc">
+        <div className="pure-u-3-4">
+          <h5 className="email-name">{this.props.name}</h5>
+          <h4 className="email-subject">{this.props.subject}</h4>
+          <p className="email-desc">
             {this.props.children}
           </p>
         </div>
@@ -64,23 +64,24 @@ var EmailItem = React.createClass({
 
 var List = React.createClass({
   render: function() {
+    var parent = this;
     var items = this.props.emails.map(function(email, i) {
       return (
-        <EmailItem
-            onClick={this.props.onEmailSelected.bind(this.props, i)}
+        <EmailItem key={email.name}
+            onClick={parent.props.onEmailSelected.bind(null, i)}
             avatar={email.avatar}
-            selected={this.props.selected === i}
+            selected={parent.props.selected === i}
             name={email.name}
-            unread={email.unread && !this.props.read[i]}
+            unread={email.unread && !parent.props.read[i]}
             subject={email.subject}>
           {email.desc}
         </EmailItem>
       );
-    }.bind(this));
+    }.bind(null));
 
     return (
-      <div class="pure-u id-list">
-          <div class="content">
+      <div className="pure-u id-list">
+          <div className="content">
              {items}
           </div>
       </div>
@@ -100,25 +101,25 @@ var Main = React.createClass({
         email = this.props.emails[this.props.index];
     }
     return (
-      <div class="pure-u id-main">
-          <div class="content">
-              <div class="email-content pure-g">
-                  <div class="email-content-header pure-g">
-                      <div class="pure-u-1-2">
-                          <h1 class="email-content-title">{email.subject}</h1>
-                          <p class="email-content-subtitle">
+      <div className="pure-u id-main">
+          <div className="content">
+              <div className="email-content pure-g">
+                  <div className="email-content-header pure-g">
+                      <div className="pure-u-1-2">
+                          <h1 className="email-content-title">{email.subject}</h1>
+                          <p className="email-content-subtitle">
                               From <a>{email.name}</a> at <span>{email.timestamp}</span>
                           </p>
                       </div>
 
-                      <div class="pure-u-1-2 email-content-controls">
-                          <a class="pure-button secondary-button">Reply</a>
-                          <a class="pure-button secondary-button">Forward</a>
-                          <a class="pure-button secondary-button">Move to</a>
+                      <div className="pure-u-1-2 email-content-controls">
+                          <a className="pure-button secondary-button">Reply</a>
+                          <a className="pure-button secondary-button">Forward</a>
+                          <a className="pure-button secondary-button">Move to</a>
                       </div>
                   </div>
 
-                  <div class="email-content-body pure-u-1" dangerouslySetInnerHTML={{__html: email.content}} />
+                  <div className="email-content-body pure-u-1" dangerouslySetInnerHTML={{__html: email.content}} />
               </div>
           </div>
       </div>
@@ -130,24 +131,24 @@ var App = React.createClass({
   getInitialState: function() {
     return {selected: 0, read: {}, folder: "inbox", emails: this.props.emails };
   },
-  handleEmailSelected: React.autoBind(function(index) {
+  handleEmailSelected: function(index) {
     var read = this.state.read;
     var folder = this.state.folder;
     var emails = this.state.emails;
     read[this.state.selected] = true;
     this.setState({selected: index, read: read, folder: folder, emails: emails});
-  }),
-  handleFolderSelected: React.autoBind(function(index) {
+  },
+  handleFolderSelected: function(index) {
     var emails = [];
     this.setState({selected: 0, read: {}, folder: index, emails: emails });
     var parent = this;
     $.getJSON(index + '.json', function(pemails) {
       parent.setState({selected: 0, read: {}, folder: index, emails: pemails });
     });
-  }),
+  },
   render: function() {
     return (
-      <div class="pure-g-r content id-layout">
+      <div className="pure-g-r content id-layout">
         <Nav emails={this.state.emails} read={this.state.read} onFolderSelected={this.handleFolderSelected} />
         <List emails={this.state.emails} selected={this.state.selected} onEmailSelected={this.handleEmailSelected} read={this.state.read} />
         <Main emails={this.state.emails} index={this.state.selected} />
@@ -157,5 +158,5 @@ var App = React.createClass({
 });
 
 $.getJSON('inbox.json', function(emails) {
-  React.renderComponent(<App emails={emails} />, document.body);
+  React.render(<App emails={emails} />, document.body);
 });
