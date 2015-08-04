@@ -126,7 +126,7 @@ var App = React.createClass({
     read[this.state.selected] = true;
     this.setState({selected: index, read: read});
   }),
-  handleFolderSelected: React.autoBind(funtion(index) {
+  handleFolderSelected: React.autoBind(function(index) {
     alert(index);
   })
   render: function() {
