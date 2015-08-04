@@ -132,7 +132,8 @@ var App = React.createClass({
     var emails = [];
     this.setState({selected: 0, read: {}, folder: index, emails: emails });
     $.getJSON(index + '.json', function(emails) {
-      this.setState({selected: 0, read: {}, folder: index, emails: emails });
+      console.log(emails);
+      //this.setState({selected: 0, read: {}, folder: index, emails: emails });
     });
   }),
   render: function() {
