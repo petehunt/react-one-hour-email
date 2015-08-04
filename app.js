@@ -129,7 +129,7 @@ var App = React.createClass({
     this.setState({selected: index, read: read, folder: folder, emails: emails});
   }),
   handleFolderSelected: React.autoBind(function(index) {
-    var emails = {};
+    var emails = [];
     this.setState({selected: 0, read: {}, folder: index, emails: emails });
   }),
   render: function() {
