@@ -90,15 +90,24 @@ var List = React.createClass({
 
 var Main = React.createClass({
   render: function() {
+    var email = {
+        subject: "",
+        name: "",
+        timestamp: "",
+        content: ""
+    };
+    if (this.props.emails.length > this.props.index && this.props.index > -1) {
+        email = this.props.emails[this.props.index];
+    }
     return (
       <div class="pure-u id-main">
           <div class="content">
               <div class="email-content pure-g">
                   <div class="email-content-header pure-g">
                       <div class="pure-u-1-2">
-                          <h1 class="email-content-title">{this.props.email.subject}</h1>
+                          <h1 class="email-content-title">{email.subject}</h1>
                           <p class="email-content-subtitle">
-                              From <a>{this.props.email.name}</a> at <span>{this.props.email.timestamp}</span>
+                              From <a>{email.name}</a> at <span>{email.timestamp}</span>
                           </p>
                       </div>
 
@@ -109,7 +118,7 @@ var Main = React.createClass({
                       </div>
                   </div>
 
-                  <div class="email-content-body pure-u-1" dangerouslySetInnerHTML={{__html: this.props.email.content}} />
+                  <div class="email-content-body pure-u-1" dangerouslySetInnerHTML={{__html: email.content}} />
               </div>
           </div>
       </div>
@@ -131,9 +140,9 @@ var App = React.createClass({
   handleFolderSelected: React.autoBind(function(index) {
     var emails = [];
     this.setState({selected: 0, read: {}, folder: index, emails: emails });
-    $.getJSON(index + '.json', function(emails) {
-      console.log(emails);
-      //this.setState({selected: 0, read: {}, folder: index, emails: emails });
+    var parent = this;
+    $.getJSON(index + '.json', function(pemails) {
+      parent.setState({selected: 0, read: {}, folder: index, emails: pemails });
     });
   }),
   render: function() {
@@ -141,7 +150,7 @@ var App = React.createClass({
       <div class="pure-g-r content id-layout">
         <Nav emails={this.state.emails} read={this.state.read} onFolderSelected={this.handleFolderSelected} />
         <List emails={this.state.emails} selected={this.state.selected} onEmailSelected={this.handleEmailSelected} read={this.state.read} />
-        <Main email={this.state.emails[this.state.selected]} />
+        <Main emails={this.state.emails} index={this.state.selected} />
       </div>
     );
   }

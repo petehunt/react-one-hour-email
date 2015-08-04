@@ -1,6 +1,6 @@
 [
-  {"name": "Test", "subject": "Test", "content": "Test", "desc": "Test", "avatar": "https://profile-a.xx.fbcdn.net/hprofile-ash3/c178.0.604.604/s320x320/600249_1002029915098_1903163647_n.jpg", "timestamp": "2015-07-20", "unread": "True" },
-  {"name": "Test2", "subject": "Test2", "content": "Test2", "desc": "Test2", "avatar": "https://profile-a.xx.fbcdn.net/hprofile-ash3/c178.0.604.604/s320x320/600249_1002029915098_1903163647_n.jpg", "timestamp": "2015-07-20", "unread": "True" },
-  {"name": "Test4", "subject": "Test4", "content": "Test2", "desc": "Test2", "avatar": "https://profile-a.xx.fbcdn.net/hprofile-ash3/c178.0.604.604/s320x320/600249_1002029915098_1903163647_n.jpg", "timestamp": "2015-07-20", "unread": "True" },
-  {"name": "Test3", "subject": "Test3", "content": "Test3", "desc": "Test3", "avatar": "https://profile-a.xx.fbcdn.net/hprofile-ash3/c178.0.604.604/s330x330/600349_1003039915098_1903163647_n.jpg", "timestamp": "3015-07-30", "unread": "True" }
+  {"name": "Test", "subject": "Test", "content": "Test", "desc": "Test", "avatar": "profile.jpg", "timestamp": "2015-07-20", "unread": "True" },
+  {"name": "Test2", "subject": "Test2", "content": "Test2", "desc": "Test2", "avatar": "profile.jpg", "timestamp": "2015-07-20", "unread": "True" },
+  {"name": "Test4", "subject": "Test4", "content": "Test2", "desc": "Test2", "avatar": "profile.jpg", "timestamp": "2015-07-20", "unread": "True" },
+  {"name": "Test3", "subject": "Test3", "content": "Test3", "desc": "Test3", "avatar": "profile.jpg", "timestamp": "3015-07-30", "unread": "True" }
 ]
