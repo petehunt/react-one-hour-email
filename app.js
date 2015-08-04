@@ -128,7 +128,7 @@ var App = React.createClass({
   }),
   handleFolderSelected: React.autoBind(function(index) {
     alert(index);
-  })
+  }),
   render: function() {
     return (
       <div class="pure-g-r content id-layout">
