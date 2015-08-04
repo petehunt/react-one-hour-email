@@ -119,15 +119,18 @@ var Main = React.createClass({
 
 var App = React.createClass({
   getInitialState: function() {
-    return {selected: 0, read: {}};
+    return {selected: 0, read: {}, folder: "inbox", emails: this.props.emails };
   },
   handleEmailSelected: React.autoBind(function(index) {
     var read = this.state.read;
+    var folder = this.state.folder;
+    var emails = this.state.emails;
     read[this.state.selected] = true;
-    this.setState({selected: index, read: read});
+    this.setState({selected: index, read: read, folder: folder, emails: emails});
   }),
   handleFolderSelected: React.autoBind(function(index) {
-    alert(index);
+    var emails = {};
+    this.setState({selected: 0, read: {}, folder: index, emails: emails });
   }),
   render: function() {
     return (
