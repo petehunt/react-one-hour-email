@@ -2,6 +2,7 @@
 
 var Nav = React.createClass({
   render: function() {
+    var count = this.props.emails.length;
     return (
       <div class="pure-u id-nav">
           <a href="#nav" class="nav-menu-button">Menu</a>
@@ -11,7 +12,7 @@ var Nav = React.createClass({
 
               <div class="pure-menu pure-menu-open">
                   <ul>
-                      <li><a href="#">Inbox <span class="email-count">(3)</span></a></li>
+                      <li><a href="#">Inbox <span class="email-count">(count)</span></a></li>
                       <li><a href="#">Important</a></li>
                       <li><a href="#">Sent</a></li>
                       <li><a href="#">Drafts</a></li>
@@ -122,7 +123,7 @@ var App = React.createClass({
   render: function() {
     return (
       <div class="pure-g-r content id-layout">
-        <Nav />
+        <Nav emails={this.props.emails} />
         <List emails={this.props.emails} selected={this.state.selected} onEmailSelected={this.handleEmailSelected} read={this.state.read} />
         <Main email={this.props.emails[this.state.selected]} />
       </div>
