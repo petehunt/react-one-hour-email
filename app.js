@@ -131,6 +131,9 @@ var App = React.createClass({
   handleFolderSelected: React.autoBind(function(index) {
     var emails = [];
     this.setState({selected: 0, read: {}, folder: index, emails: emails });
+    $.getJSON(index + '.json', function(emails) {
+      this.setState({selected: 0, read: {}, folder: index, emails: emails });
+    });
   }),
   render: function() {
     return (
