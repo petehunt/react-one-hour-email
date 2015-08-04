@@ -135,9 +135,9 @@ var App = React.createClass({
   render: function() {
     return (
       <div class="pure-g-r content id-layout">
-        <Nav emails={this.props.emails} read={this.state.read} onFolderSelected={this.handleFolderSelected} />
-        <List emails={this.props.emails} selected={this.state.selected} onEmailSelected={this.handleEmailSelected} read={this.state.read} />
-        <Main email={this.props.emails[this.state.selected]} />
+        <Nav emails={this.state.emails} read={this.state.read} onFolderSelected={this.handleFolderSelected} />
+        <List emails={this.state.emails} selected={this.state.selected} onEmailSelected={this.handleEmailSelected} read={this.state.read} />
+        <Main email={this.state.emails[this.state.selected]} />
       </div>
     );
   }
