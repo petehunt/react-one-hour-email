@@ -65,24 +65,20 @@ var EmailItem = React.createClass({
 var List = React.createClass({
   render: function() {
     var parent = this;
-    var items = this.props.emails.map(function(email, i) {
-      return (
-        <EmailItem key={email.name}
-            onClick={parent.props.onEmailSelected.bind(null, i)}
-            avatar={email.avatar}
-            selected={parent.props.selected === i}
-            name={email.name}
-            unread={email.unread && !parent.props.read[i]}
-            subject={email.subject}>
-          {email.desc}
-        </EmailItem>
-      );
-    }.bind(null));
-
     return (
       <div className="pure-u id-list">
           <div className="content">
-             {items}
+      {this.props.emails.map(function(email, i) {
+          return <EmailItem key={email.name}
+              onClick={parent.props.onEmailSelected}
+              avatar={email.avatar}
+              selected={parent.props.selected === i}
+              name={email.name}
+              unread={email.unread && !parent.props.read[i]}
+              subject={email.subject}>
+            {email.desc}
+          </EmailItem>;
+        })}
           </div>
       </div>
     );
