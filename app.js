@@ -18,8 +18,8 @@ var Nav = React.createClass({
 
               <div class="pure-menu pure-menu-open">
                   <ul>
-                      <li><a href="#" onClick="getInbox();">Inbox <span class="email-count">({count})</span></a></li>
-                      <li><a href="#" onClick="getImportant();">Important</a></li>
+                      <li><a href="#" onClick={this.props.onFolderSelected.bind(this.props, 'inbox')}>Inbox <span class="email-count">({count})</span></a></li>
+                      <li><a href="#" onClick={this.props.onFolderSelected.bind(this.props, 'important')}>Important</a></li>
                       <li><a href="#">Sent</a></li>
                       <li><a href="#">Drafts</a></li>
                       <li><a href="#">Trash</a></li>
@@ -126,6 +126,9 @@ var App = React.createClass({
     read[this.state.selected] = true;
     this.setState({selected: index, read: read});
   }),
+  handleFolderSelected: React.autoBind(funtion(index) {
+    alert(index);
+  })
   render: function() {
     return (
       <div class="pure-g-r content id-layout">
@@ -137,18 +140,6 @@ var App = React.createClass({
   }
 });
 
-function getInbox() {
-  $.getJSON('inbox.json', function(emails) {
+$.getJSON('inbox.json', function(emails) {
   React.renderComponent(<App emails={emails} />, document.body);
 });
-}
-
-function getImportant() {
-  $.getJSON('important.json', function(emails) {
-  React.renderComponent(<App emails={emails} />, document.body);
-});
-}
-
-getInbox();
-
-
