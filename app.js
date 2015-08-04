@@ -18,8 +18,8 @@ var Nav = React.createClass({
 
               <div class="pure-menu pure-menu-open">
                   <ul>
-                      <li><a href="#">Inbox <span class="email-count">({count})</span></a></li>
-                      <li><a href="#">Important</a></li>
+                      <li><a href="#" onClick="$.getJSON('inbox.json', function(emails) { React.renderComponent(<App emails={emails} />, document.body);});">Inbox <span class="email-count">({count})</span></a></li>
+                      <li><a href="#"  onClick="$.getJSON('important.json', function(emails) { React.renderComponent(<App emails={emails} />, document.body);});">Important</a></li>
                       <li><a href="#">Sent</a></li>
                       <li><a href="#">Drafts</a></li>
                       <li><a href="#">Trash</a></li>
