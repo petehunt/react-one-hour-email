@@ -1,0 +1,16 @@
+{
+  "name": "react-one-hour-email",
+  "version": "0.0.0",
+  "homepage": "https://github.com/arran4/react-one-hour-email",
+  "authors": [
+    "Arran Ubels <reactonehouremail@arran4.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

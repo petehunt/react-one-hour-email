@@ -29,9 +29,9 @@
     try { Typekit.load(); } catch (e) {}
 </script>
 
-<script src="components/zepto/zepto.min.js"></script>
-<script src="components/react/react.js"></script>
-<script src="components/react/JSXTransformer.js"></script>
+<script src="bower_components/zepto/zepto.min.js"></script>
+<script src="bower_components/react/react.js"></script>
+<script src="bower_components/react/JSXTransformer.js"></script>
 <script src="app.js" type="text/jsx"></script>
 
 
@@ -49,7 +49,7 @@
 
         // Setting the active class name expands the menu vertically on small screens.
         menuButton.on('click', function (e) {
-            nav.toggleClass('active');
+           nav.toggleClass('active');
         });
 
         // Your application code goes here...
@@ -65,6 +65,7 @@ YUI().use('node-base', 'node-event-delegate', function (Y) {
     Y.one('.content').delegate('click', function (e) {
         e.preventDefault();
     }, 'a[href="#"]');
+
 });
 </script>
 
