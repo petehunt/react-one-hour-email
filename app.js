@@ -12,7 +12,7 @@ var Nav = React.createClass({
 
               <div class="pure-menu pure-menu-open">
                   <ul>
-                      <li><a href="#">Inbox <span class="email-count">(count)</span></a></li>
+                      <li><a href="#">Inbox <span class="email-count">{count}</span></a></li>
                       <li><a href="#">Important</a></li>
                       <li><a href="#">Sent</a></li>
                       <li><a href="#">Drafts</a></li>
