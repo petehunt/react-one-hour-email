@@ -45,7 +45,7 @@ var EmailItem = React.createClass({
       classes += ' email-item-unread';
     }
     return (
-      <div className={classes}>
+      <div className={classes} onClick={this.props.onEmailSelected.bind(null, this.props.i)}>
         <div className="pure-u">
           <img className="email-avatar" alt={this.props.name + '\'s avatar'} src={this.props.avatar} height="65" width="65"/>
         </div>
@@ -68,17 +68,18 @@ var List = React.createClass({
     return (
       <div className="pure-u id-list">
           <div className="content">
-      {this.props.emails.map(function(email, i) {
-          return <EmailItem key={email.name}
-              onClick={parent.props.onEmailSelected}
-              avatar={email.avatar}
-              selected={parent.props.selected === i}
-              name={email.name}
-              unread={email.unread && !parent.props.read[i]}
-              subject={email.subject}>
-            {email.desc}
-          </EmailItem>;
-        })}
+            {this.props.emails.map(function(email, i) {
+                return <EmailItem key={email.name}
+                  i={i}
+                  onEmailSelected={parent.props.onEmailSelected}
+                  avatar={email.avatar}
+                  selected={parent.props.selected === i}
+                  name={email.name}
+                  unread={email.unread && !parent.props.read[i]}
+                  subject={email.subject}>
+                {email.desc}
+              </EmailItem>;
+            })}
           </div>
       </div>
     );
